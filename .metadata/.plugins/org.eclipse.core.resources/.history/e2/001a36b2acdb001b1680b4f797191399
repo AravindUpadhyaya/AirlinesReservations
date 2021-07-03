@@ -1,0 +1,4 @@
+spring.datasource.url=jdbc:mysql://localhost:3306/MySQL
+spring.datasource.username=root
+spring.datasource.password=Hexaware@123
+spring.jpa.hibernate.ddl-auto=update

@@ -1,0 +1,6 @@
+spring.datasource.url=jdbc:mysql://localhost:3306/MySQL
+spring.datasource.username=root
+spring.datasource.password=Hexaware@123
+javax.persistence.schema-generation.scripts.action=none
+spring.jpa.show-sql=true
+spring.jpa.defer-datasource-initialization=true

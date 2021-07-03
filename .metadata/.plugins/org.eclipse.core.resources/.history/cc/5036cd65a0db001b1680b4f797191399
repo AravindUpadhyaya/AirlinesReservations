@@ -1,0 +1,4 @@
+spring.datasource.url=jdbc:mysql://localhost:3306
+spring.datasource.username=ftp
+spring.datasource.password=ftp
+spring.jpa.hibernate.ddl-auto=update

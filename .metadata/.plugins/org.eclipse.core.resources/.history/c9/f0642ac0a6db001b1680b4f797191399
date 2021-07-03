@@ -1,0 +1,4 @@
+spring.datasource.url=jdbc:mysql://localhost:3306/Airlines_Reservations_11491
+spring.datasource.username=root
+spring.datasource.password=Hexaware@123
+spring.jpa.hibernate.ddl-auto=update

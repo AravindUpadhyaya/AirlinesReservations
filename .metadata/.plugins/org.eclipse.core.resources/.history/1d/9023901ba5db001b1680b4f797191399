@@ -1,0 +1,20 @@
+package com.hexaware.airlinesreservations.Airlinesreservations.models;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+
+@Entity
+public class User {
+
+	@Column(name = "USER_ID")
+	private int id;
+	
+	@Column(name = "USER_NAME")
+	private String userName;
+	
+	@Column(name = "USER_EMAIL")
+	private String email;
+	
+	
+	
+}

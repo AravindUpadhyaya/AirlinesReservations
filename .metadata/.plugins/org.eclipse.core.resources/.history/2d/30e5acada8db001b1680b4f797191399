@@ -1,0 +1,5 @@
+package com.hexaware.airlinesreservations.Airlinesreservations.Repositories;
+
+public class AirlinesUserRepository {
+
+}
