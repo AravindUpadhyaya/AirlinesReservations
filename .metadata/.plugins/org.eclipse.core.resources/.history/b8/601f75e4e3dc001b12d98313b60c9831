@@ -1,0 +1,16 @@
+package com.hexaware.airlinesreservations.Airlinesreservations.Controller;
+
+import java.util.List;
+
+import org.springframework.web.bind.annotation.RestController;
+
+import com.hexaware.airlinesreservations.Airlinesreservations.models.Reservation;
+
+@RestController
+public class ReservationsController {
+	
+	public List<Reservation> getAllReservations(){
+		
+	}
+
+}

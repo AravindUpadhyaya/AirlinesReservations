@@ -1,0 +1,20 @@
+package com.hexaware.airlinesreservations.Airlinesreservations.Service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+import com.hexaware.airlinesreservations.Airlinesreservations.Repositories.ReservationRepository;
+import com.hexaware.airlinesreservations.Airlinesreservations.models.Reservation;
+
+@Component
+public class ReservationService {
+
+	@Autowired
+	ReservationRepository reservationRepo;
+	
+	public List<Reservation> findAllReservation() {
+		return reservationRepo.findAll();
+	}
+}

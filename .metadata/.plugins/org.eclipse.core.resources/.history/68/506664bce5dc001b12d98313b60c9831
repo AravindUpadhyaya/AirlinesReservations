@@ -1,0 +1,9 @@
+package com.hexaware.airlinesreservations.Airlinesreservations.Service;
+
+import org.springframework.stereotype.Component;
+
+@Component
+public class ReservationService {
+
+	
+}

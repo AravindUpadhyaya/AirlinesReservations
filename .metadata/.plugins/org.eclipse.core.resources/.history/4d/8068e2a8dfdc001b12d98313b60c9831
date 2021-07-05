@@ -1,0 +1,5 @@
+package com.hexaware.airlinesreservations.Airlinesreservations.models;
+
+public class Registration {
+
+}

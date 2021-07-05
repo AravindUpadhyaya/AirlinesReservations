@@ -1,0 +1,11 @@
+package com.hexaware.airlinesreservations.Airlinesreservations.models;
+
+import java.sql.Date;
+
+public class SearchFlights {
+
+	private String sourceCity;
+	private String destinationCity;
+	private Date travelDate;
+	
+}

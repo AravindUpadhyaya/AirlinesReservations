@@ -1,0 +1,41 @@
+package com.hexaware.airlinesreservations.Airlinesreservations.models;
+
+import java.sql.Timestamp;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "Flights")
+public class Flights {
+
+	@Id
+	@GeneratedValue
+	@Column(name = "flight_id")
+	private int flightID;
+	
+	@Column(name = "flight_name")
+	private String flightName;
+	
+	@Column(name = "source_city")
+	private String sourceCity;
+	
+	@Column(name = "destination_city")
+	private String destinationCity;
+	
+	@Column(name = "seats_available")
+	private int seats;
+	
+	@Column(name = "price")
+	private int price;
+	
+	@Column(name = "create_user")
+	private String userID;
+	
+	@Column(name = "create_timestmap")
+	private Timestamp createTimestamp;
+	
+}

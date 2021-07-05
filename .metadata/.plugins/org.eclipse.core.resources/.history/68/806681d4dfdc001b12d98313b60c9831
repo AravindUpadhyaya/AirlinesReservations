@@ -1,0 +1,111 @@
+package com.hexaware.airlinesreservations.Airlinesreservations.models;
+
+import java.sql.Date;
+import java.sql.Timestamp;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "Booking")
+public class Reservation {
+
+	@Id
+	@GeneratedValue
+	@Column(name = "booking_id")
+	private int bookingID;
+
+	@Column(name = "passenger_name")
+	private String passengerName;
+
+	@Column(name = "source_city")
+	private String sourceCity;
+
+	@Column(name = "destination_city")
+	private String destinationCity;
+
+	@Column(name = "travel_date")
+	private Date travelDate;
+
+	@Column(name = "travel_date")
+	private String bookingStatus;
+
+	@Column(name = "create_timestamp")
+	private Timestamp createTimestamp;
+
+	public Reservation() {
+
+	}
+
+	public Reservation(int bookingID, String passengerName, String sourceCity, String destinationCity, Date travelDate,
+			String bookingStatus, Timestamp createTimestamp) {
+		super();
+		this.bookingID = bookingID;
+		this.passengerName = passengerName;
+		this.sourceCity = sourceCity;
+		this.destinationCity = destinationCity;
+		this.travelDate = travelDate;
+		this.bookingStatus = bookingStatus;
+		this.createTimestamp = createTimestamp;
+	}
+
+	public int getBookingID() {
+		return bookingID;
+	}
+
+	public void setBookingID(int bookingID) {
+		this.bookingID = bookingID;
+	}
+
+	public String getPassengerName() {
+		return passengerName;
+	}
+
+	public void setPassengerName(String passengerName) {
+		this.passengerName = passengerName;
+	}
+
+	public String getSourceCity() {
+		return sourceCity;
+	}
+
+	public void setSourceCity(String sourceCity) {
+		this.sourceCity = sourceCity;
+	}
+
+	public String getDestinationCity() {
+		return destinationCity;
+	}
+
+	public void setDestinationCity(String destinationCity) {
+		this.destinationCity = destinationCity;
+	}
+
+	public Date getTravelDate() {
+		return travelDate;
+	}
+
+	public void setTravelDate(Date travelDate) {
+		this.travelDate = travelDate;
+	}
+
+	public String getBookingStatus() {
+		return bookingStatus;
+	}
+
+	public void setBookingStatus(String bookingStatus) {
+		this.bookingStatus = bookingStatus;
+	}
+
+	public Timestamp getCreateTimestamp() {
+		return createTimestamp;
+	}
+
+	public void setCreateTimestamp(Timestamp createTimestamp) {
+		this.createTimestamp = createTimestamp;
+	}
+
+}

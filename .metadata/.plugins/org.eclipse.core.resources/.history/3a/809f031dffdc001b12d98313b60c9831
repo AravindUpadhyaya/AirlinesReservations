@@ -1,0 +1,30 @@
+package com.hexaware.airlinesreservations.Airlinesreservations.Controller;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.hexaware.airlinesreservations.Airlinesreservations.Service.ReservationService;
+import com.hexaware.airlinesreservations.Airlinesreservations.models.Reservation;
+
+@RestController
+public class ReservationController {
+	
+	@Autowired
+	ReservationService reservationService;
+	
+	@GetMapping("/getAllReservations")
+	public List<Reservation> findAllReservation(){
+		return reservationService.findAllReservation();
+	}
+	
+	@GetMapping("/findByID")
+	public Optional<Reservation> findById(@RequestParam String id) {
+		return reservationService.findById(Integer.parseInt(id));
+	}
+
+}

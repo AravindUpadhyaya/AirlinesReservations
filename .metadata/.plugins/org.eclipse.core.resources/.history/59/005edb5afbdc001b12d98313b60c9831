@@ -1,0 +1,30 @@
+package com.hexaware.airlinesreservations.Airlinesreservations.Service;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+import com.hexaware.airlinesreservations.Airlinesreservations.Repositories.ReservationRepository;
+import com.hexaware.airlinesreservations.Airlinesreservations.models.Reservation;
+
+@Component
+public class ReservationService {
+
+	@Autowired
+	ReservationRepository reservationRepo;
+	
+	public List<Reservation> findAllReservation() {
+		return reservationRepo.findAll();
+	}
+	
+	public Optional<Reservation> findById(int ID) {
+		Optional<Reservation> reservation = reservationRepo.findById(ID);
+		if (reservation.isPresent()) {
+			//throw exception here 
+			//TODO
+		}
+		return reservation;
+	}
+}
