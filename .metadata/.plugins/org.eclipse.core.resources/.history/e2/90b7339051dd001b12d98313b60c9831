@@ -1,0 +1,5 @@
+package com.hexaware.airlinesreservations.Airlinesreservations.exception;
+
+public class FlightsException {
+
+}

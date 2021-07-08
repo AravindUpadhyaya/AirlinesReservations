@@ -9,9 +9,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.hexaware.airlinesreservations.Airlinesreservations.Service.AirlinesUserService;
+import com.hexaware.airlinesreservations.Airlinesreservations.exception.UserException;
 import com.hexaware.airlinesreservations.Airlinesreservations.models.AirlinesUser;
 
 @RestController
@@ -38,5 +40,10 @@ public class AirlinesUserController {
 	@DeleteMapping("/deleteUser")
 	public void deleteUser(@RequestBody AirlinesUser user) {
 		airlinesUserService.deleteUser(user);
+	}
+	
+	@GetMapping("/validateUserName")
+	public ResponseEntity<Object> validateUserName(@RequestParam String userName) throws UserException {
+		return airlinesUserService.validateUser(userName);
 	}
 }

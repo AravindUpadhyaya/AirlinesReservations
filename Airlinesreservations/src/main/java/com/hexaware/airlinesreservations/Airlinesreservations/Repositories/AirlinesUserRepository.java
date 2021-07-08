@@ -1,5 +1,7 @@
 package com.hexaware.airlinesreservations.Airlinesreservations.Repositories;
 
+import java.util.Optional;
+
 import javax.transaction.Transactional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -10,4 +12,5 @@ import com.hexaware.airlinesreservations.Airlinesreservations.models.AirlinesUse
 @Repository
 @Transactional
 public interface AirlinesUserRepository extends JpaRepository<AirlinesUser, Integer> {
+	
 }

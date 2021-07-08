@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.hexaware.airlinesreservations.Airlinesreservations.Service.FlightsService;
+import com.hexaware.airlinesreservations.Airlinesreservations.exception.FlightsException;
 import com.hexaware.airlinesreservations.Airlinesreservations.models.Flights;
 
 @RestController
@@ -27,7 +28,7 @@ public class FlightsController {
 	}
 	
 	@GetMapping("/findById")
-	public Optional<Flights> findById(@RequestParam String id) {
+	public Optional<Flights> findById(@RequestParam String id) throws NumberFormatException, FlightsException {
 		return flightsService.findById(Integer.parseInt(id));
 	}
 	

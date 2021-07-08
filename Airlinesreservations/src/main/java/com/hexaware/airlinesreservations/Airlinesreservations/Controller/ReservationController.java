@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.hexaware.airlinesreservations.Airlinesreservations.Service.ReservationService;
+import com.hexaware.airlinesreservations.Airlinesreservations.exception.FlightsException;
 import com.hexaware.airlinesreservations.Airlinesreservations.models.Flights;
 import com.hexaware.airlinesreservations.Airlinesreservations.models.Reservation;
 import com.hexaware.airlinesreservations.Airlinesreservations.models.SearchFlights;
@@ -38,7 +39,7 @@ public class ReservationController {
 	}
 	
 	@PostMapping("/saveReservation")
-	public Reservation saveReservation(@RequestBody Reservation reservation) {
+	public Reservation saveReservation(@RequestBody Reservation reservation) throws FlightsException {
 		return reservationService.save(reservation);
 	}
 	

@@ -5,3 +5,8 @@
 1625415031075	Rename type 'BookingController'
 1625415691409	Rename type 'ReservationsController'
 1625424353962	Rename type 'SearchFlightsCriteria'
+1625462485630	Delete element
+1625462550282	Copy package
+1625462571745	Delete element
+1625462589938	Rename package 'com.hexaware.airlinesreservations.Airlinesreservations.exception.copy'
+1625464562265	Rename field 'airlinesRepo'

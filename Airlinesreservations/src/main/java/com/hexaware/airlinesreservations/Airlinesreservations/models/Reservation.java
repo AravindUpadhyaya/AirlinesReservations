@@ -6,7 +6,10 @@ import java.sql.Timestamp;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
@@ -14,10 +17,14 @@ import javax.persistence.Table;
 public class Reservation {
 
 	@Id
-	@GeneratedValue
+	@SequenceGenerator(name = "Reservation_SEQ", sequenceName = "Reservation_SEQ", allocationSize=1)
+	@GeneratedValue(strategy = GenerationType.AUTO, generator = "Reservation_SEQ" )
 	@Column(name = "reservation_id")
 	private int reservationID;
 
+	@OneToOne(targetEntity = Flights.class)
+	private int flightID;
+	
 	@Column(name = "passenger_name")
 	private String passengerName;
 
@@ -39,10 +46,11 @@ public class Reservation {
 	public Reservation() {
 	}
 
-	public Reservation(int reservationID, String passengerName, String sourceCity, String destinationCity, Date travelDate,
+	public Reservation(int reservationID, int flightID, String passengerName, String sourceCity, String destinationCity, Date travelDate,
 			String reservationStatus, Timestamp createTimestamp) {
 		super();
 		this.reservationID = reservationID;
+		this.flightID = flightID;
 		this.passengerName = passengerName;
 		this.sourceCity = sourceCity;
 		this.destinationCity = destinationCity;
@@ -89,6 +97,30 @@ public class Reservation {
 
 	public void setCreateTimestamp(Timestamp createTimestamp) {
 		this.createTimestamp = createTimestamp;
+	}
+
+	public int getReservationID() {
+		return reservationID;
+	}
+
+	public void setReservationID(int reservationID) {
+		this.reservationID = reservationID;
+	}
+
+	public int getFlightID() {
+		return flightID;
+	}
+
+	public void setFlightID(int flightID) {
+		this.flightID = flightID;
+	}
+
+	public String getReservationStatus() {
+		return reservationStatus;
+	}
+
+	public void setReservationStatus(String reservationStatus) {
+		this.reservationStatus = reservationStatus;
 	}
 
 }

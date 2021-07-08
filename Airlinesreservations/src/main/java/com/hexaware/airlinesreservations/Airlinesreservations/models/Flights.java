@@ -6,7 +6,9 @@ import java.sql.Timestamp;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
@@ -14,7 +16,8 @@ import javax.persistence.Table;
 public class Flights {
 
 	@Id
-	@GeneratedValue
+	@SequenceGenerator(name = "Flights_SEQ", sequenceName = "Flights_SEQ", allocationSize=1)
+	@GeneratedValue(strategy = GenerationType.AUTO, generator = "Flights_SEQ" )
 	@Column(name = "flight_id")
 	private int flightID;
 	

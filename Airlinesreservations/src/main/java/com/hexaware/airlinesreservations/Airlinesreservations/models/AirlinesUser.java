@@ -5,7 +5,9 @@ import java.sql.Timestamp;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
@@ -13,7 +15,8 @@ import javax.persistence.Table;
 public class AirlinesUser {
 
 	@Id
-	@GeneratedValue
+	@SequenceGenerator(name = "AirlinesUser_SEQ", sequenceName = "AirlinesUser_SEQ", allocationSize=1)
+	@GeneratedValue(strategy = GenerationType.AUTO, generator = "AirlinesUser_SEQ" )
 	@Column(name = "ID")
 	private int id;
 	

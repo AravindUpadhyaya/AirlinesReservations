@@ -1,0 +1,45 @@
+package com.hexaware.airlinesreservations.Airlinesreservations.Service;
+
+import java.util.List;
+
+import org.hibernate.criterion.Example;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Component;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import com.hexaware.airlinesreservations.Airlinesreservations.Repositories.AirlinesUserRepository;
+import com.hexaware.airlinesreservations.Airlinesreservations.models.AirlinesUser;
+
+@Component
+public class AirlinesUserService {
+
+	@Autowired
+	private AirlinesUserRepository userRepo;
+	
+	public List<AirlinesUser> findAllUsers() {
+		return userRepo.findAll();
+	}
+	
+	public void saveUser(AirlinesUser user) {
+		userRepo.save(user);
+	}
+	
+	public void updateUser(AirlinesUser user) {
+		if (userRepo.existsById(user.getId())) {
+			userRepo.saveAndFlush(user);
+		}
+	}
+	
+	public void deleteUser(AirlinesUser user) {
+		if (userRepo.existsById(user.getId())) {
+			userRepo.delete(user);
+		}
+	}
+	
+	public ResponseEntity<Object> validateUser(
+			@RequestParam String userName, 
+			@RequestParam String password) {
+		return null;
+	}
+}
