@@ -45,10 +45,12 @@ public class AirlinesUserService {
 		}
 	}
 	
-	public ResponseEntity<Object> validateUser(AirlinesUser user) throws UserException {
+	public ResponseEntity<Object> validateUser(String userName) throws UserException {
+		AirlinesUser user = new AirlinesUser();
+		user.setUserName(userName);
 		
 		ExampleMatcher matcher = ExampleMatcher.matching()
-				.withMatcher(user.getUserName(), GenericPropertyMatcher.of(StringMatcher.EXACT));
+				.withMatcher(userName, GenericPropertyMatcher.of(StringMatcher.EXACT));
 		
 		Example<AirlinesUser> example = Example.of(user, matcher);
 		

@@ -43,7 +43,7 @@ public class AirlinesUserController {
 	}
 	
 	@GetMapping("/validateUserName")
-	public ResponseEntity<Object> validateUserName(@RequestBody AirlinesUser user) throws UserException {
-		return airlinesUserService.validateUser(user);
+	public ResponseEntity<Object> validateUserName(@RequestParam String userName) throws UserException {
+		return airlinesUserService.validateUser(userName);
 	}
 }
